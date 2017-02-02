@@ -1,0 +1,105 @@
+Crashlog created at 2017-02-02 11:01:02 -0800
+
+===== MESSAGE:
+
+Nanoc::Int::Errors::NoMatchingCompilationRuleFound: No compilation rules were found for the “/img/facebook.png” item.
+
+===== STACK TRACE:
+
+  0. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/rule_dsl/action_provider.rb:30:in `rep_names_for'
+  1. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/base/services/item_rep_builder.rb:14:in `block in run'
+  2. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/base/services/item_rep_builder.rb:13:in `run'
+  3. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/base/services/compiler.rb:167:in `build_reps'
+  4. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/base/services/compiler.rb:125:in `run_all'
+  5. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/base/entities/site.rb:21:in `compile'
+  6. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/cli/commands/compile.rb:408:in `block in run'
+  7. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/cli/commands/compile.rb:443:in `run_listeners_while'
+  8. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/cli/commands/compile.rb:407:in `run'
+  9. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/cli/command_runner.rb:12:in `block in call'
+  10. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/cli/error_handler.rb:64:in `handle_while'
+  11. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/cli/error_handler.rb:22:in `handle_while'
+  12. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/cli/command_runner.rb:11:in `call'
+  13. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/cri-2.7.1/lib/cri/command_dsl.rb:231:in `block in runner'
+  14. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/cri-2.7.1/lib/cri/command.rb:292:in `call'
+  15. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/cri-2.7.1/lib/cri/command.rb:292:in `run_this'
+  16. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/cri-2.7.1/lib/cri/command.rb:244:in `run'
+  17. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/cli/commands/nanoc.rb:41:in `block in define'
+  18. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/cri-2.7.1/lib/cri/command.rb:292:in `call'
+  19. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/cri-2.7.1/lib/cri/command.rb:292:in `run_this'
+  20. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/cri-2.7.1/lib/cri/command.rb:244:in `run'
+  21. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/cli.rb:45:in `block in run'
+  22. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/cli/error_handler.rb:64:in `handle_while'
+  23. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/cli/error_handler.rb:22:in `handle_while'
+  24. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib/nanoc/cli.rb:43:in `run'
+  25. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/bin/nanoc:9:in `<top (required)>'
+  26. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/bin/nanoc:23:in `load'
+  27. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/bin/nanoc:23:in `<main>'
+  28. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/bin/ruby_executable_hooks:15:in `eval'
+
+===== VERSION INFORMATION:
+
+Nanoc 4.6.1 © 2007-2017 Denis Defreyne.
+Running ruby 2.1.7 (2015-08-18) on x86_64-darwin14.0 with RubyGems 2.4.8.
+
+===== SYSTEM INFORMATION:
+
+Darwin mgcc122884.ent.rt.csaa.com 15.6.0 Darwin Kernel Version 15.6.0: Mon Aug 29 20:21:34 PDT 2016; root:xnu-3248.60.11~1/RELEASE_X86_64 x86_64
+
+===== INSTALLED GEMS:
+
+  bundler 1.14.3
+  colored 1.2
+  concurrent-ruby 1.0.4
+  cri 2.7.1
+  ddplugin 1.0.0
+  hamster 3.0.0
+  nanoc 4.6.1
+  ref 2.0.0
+
+===== GEMFILE.LOCK:
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    colored (1.2)
+    concurrent-ruby (1.0.4)
+    cri (2.7.1)
+      colored (~> 1.2)
+    ddplugin (1.0.0)
+    hamster (3.0.0)
+      concurrent-ruby (~> 1.0)
+    nanoc (4.6.1)
+      cri (~> 2.3)
+      ddplugin (~> 1.0)
+      hamster (~> 3.0)
+      ref (~> 2.0)
+    ref (2.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  nanoc
+
+BUNDLED WITH
+   1.14.3
+
+===== LOAD PATHS:
+
+  0. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/ref-2.0.0/lib
+  1. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/bundler-1.14.3/lib
+  2. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/nanoc-4.6.1/lib
+  3. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/ref-2.0.0/lib
+  4. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/hamster-3.0.0/lib
+  5. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/ddplugin-1.0.0/lib
+  6. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/cri-2.7.1/lib
+  7. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/concurrent-ruby-1.0.4/lib
+  8. /Users/gslzwol/.rvm/gems/ruby-2.1.7@nanoc/gems/colored-1.2/lib
+  9. /Users/gslzwol/.rvm/rubies/ruby-2.1.7/lib/ruby/site_ruby/2.1.0
+  10. /Users/gslzwol/.rvm/rubies/ruby-2.1.7/lib/ruby/site_ruby/2.1.0/x86_64-darwin14.0
+  11. /Users/gslzwol/.rvm/rubies/ruby-2.1.7/lib/ruby/site_ruby
+  12. /Users/gslzwol/.rvm/rubies/ruby-2.1.7/lib/ruby/vendor_ruby/2.1.0
+  13. /Users/gslzwol/.rvm/rubies/ruby-2.1.7/lib/ruby/vendor_ruby/2.1.0/x86_64-darwin14.0
+  14. /Users/gslzwol/.rvm/rubies/ruby-2.1.7/lib/ruby/vendor_ruby
+  15. /Users/gslzwol/.rvm/rubies/ruby-2.1.7/lib/ruby/2.1.0
+  16. /Users/gslzwol/.rvm/rubies/ruby-2.1.7/lib/ruby/2.1.0/x86_64-darwin14.0

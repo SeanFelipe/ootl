@@ -1,0 +1,25 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    colored (1.2)
+    concurrent-ruby (1.0.4)
+    cri (2.7.1)
+      colored (~> 1.2)
+    ddplugin (1.0.0)
+    hamster (3.0.0)
+      concurrent-ruby (~> 1.0)
+    nanoc (4.6.1)
+      cri (~> 2.3)
+      ddplugin (~> 1.0)
+      hamster (~> 3.0)
+      ref (~> 2.0)
+    ref (2.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  nanoc
+
+BUNDLED WITH
+   1.14.3
