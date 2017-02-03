@@ -19,11 +19,11 @@ side1.fill((255,0,0)) # red, green, blue
 #side2.fill((255,0,0)) # red, green, blue
 
 # https://www.pygame.org/docs/ref/draw.html
-pygame.draw.circle(red_square, (255,255,255), (50,50), 10)
+pygame.draw.circle(side1, (255,255,255), (50,50), 10)
 
 # get to know Surface and Surface.blit()
 # https://www.pygame.org/docs/ref/surface.html#pygame.Surface.blit
-screen.blit(red_square, (0,0))
+screen.blit(side1, (0,0))
 
 # always need this to make stuff actually update! Think like a computer!
 u = pygame.display.update
