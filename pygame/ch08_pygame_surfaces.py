@@ -10,8 +10,13 @@ screen = pygame.display.set_mode((640,480))
 DICE_SIDE_LENGTH = 100
 
 # https://www.pygame.org/docs/ref/surface.html
-red_square = pygame.Surface((DICE_SIDE_LENGTH, DICE_SIDE_LENGTH))
-red_square.fill((255,0,0)) # red, green, blue
+side1 = pygame.Surface((DICE_SIDE_LENGTH, DICE_SIDE_LENGTH))
+side1.fill((255,0,0)) # red, green, blue
+
+# uncomment and update the position for side 2
+# but why doesn't it display?
+#side2 = pygame.Surface((DICE_SIDE_LENGTH, DICE_SIDE_LENGTH))
+#side2.fill((255,0,0)) # red, green, blue
 
 # https://www.pygame.org/docs/ref/draw.html
 pygame.draw.circle(red_square, (255,255,255), (50,50), 10)
