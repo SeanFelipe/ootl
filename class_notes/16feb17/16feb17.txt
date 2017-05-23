@@ -1,0 +1,18 @@
+cd
+cd /
+/Users/username
+/home/username
+pwd
+mkdir
+ls -l
+
+
+
+chaining commands with pipe
+
+
+
+run from directory aot idle
+
+
+Rect = (x, y, w, h)

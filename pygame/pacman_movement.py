@@ -21,18 +21,13 @@ pacmanx, pacmany = startx, starty
 
 running = True
 while running:
-    screen.blit(pacman, pacmanx, pacmany)
     for e in pygame.event.get():
         if e.type == pygame.QUIT:
             running = False
             pygame.quit()
         # what is the event type for a keyboard press?
         # https://www.pygame.org/docs/ref/event.html
-        elif e.type == pygame.?????:
+        if e.type == pygame.?????:
+            print e
             # how do we get which key was pressed?
-            # what keys do we care about?
-            # what direction to we need to adjust based on which key is pressed?
-            # adjust pacmanx
-            # adjust pacmany
-    pygame.display.update()
 
