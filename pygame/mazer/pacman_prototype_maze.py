@@ -85,7 +85,9 @@ while running:
             pacman.y += MOVE_INCREMENT
         #print pacman.direction
         color_ahead = spritesheet.get_at(pacman.get_pixels_ahead())
+        print color_ahead
         if color_ahead == BLUE_WALL_COLOR:
+            print 'color_ahead is BLUE_WALL_COLOR'
             moving = False
 
 
@@ -101,7 +103,7 @@ while running:
             if kname in ('right','left','up','down'):
                 moving = True
                 pacman.direction = kname
-		#print pacman.x, pacman.y
+                #print pacman.x, pacman.y
 
 
 pygame.quit()
