@@ -10,11 +10,12 @@ x = 50
 y = 50
 w = 100
 h = w
+CIRCLE_RADIUS = w / 10
 
 square_rect = pygame.Rect(x, y, w, h)
 
 pygame.draw.rect(screen, BLUE, square_rect)
-pygame.draw.circle(screen, YELLOW, (100,100), 15)
+pygame.draw.circle(screen, YELLOW, (100,100), CIRCLE_RADIUS)
 
 pygame.display.update()
 
