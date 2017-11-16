@@ -4,7 +4,9 @@ from pygame.transform import scale2x
 screen = pygame.display.set_mode((300,300))
 spritesheet = pygame.image.load('spritesheet.png')
 
-wall = scale2x(spritesheet.subsurface(448, 2, 5, 100))
+wall_width = 5
+wall_height = 100
+wall = scale2x(spritesheet.subsurface(448, 2, wall_width, wall_height))
 pacman = scale2x(spritesheet.subsurface(453, 0, 16, 16))
 
 wallx, wally = 200, 70
