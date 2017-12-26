@@ -133,7 +133,7 @@ blinkyy = ghosty - 47
 pacx = screen.get_width() / 2 - 16
 pacy = (screen.get_height() / 4 * 3) - 11
 
-print pacx, pacy
+print "pacx/y: ", pacx, pacy
 screen.blit(pacman, (pacx, pacy))
 
 GINC = 32
