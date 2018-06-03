@@ -19,6 +19,7 @@ sw, sh = ss.get_width(), ss.get_height()
 
 
 screen = pygame.display.set_mode((sw,sh))
+new_image = None
 
 rx, ry = 0,0
 rw = 16
@@ -30,12 +31,15 @@ rcolor = (175,175,175)
 
 expanding = False
 translating = False
+show_rect_dimensions = True
 kex = None
 
 def store_subsurface_image(rx, ry, rw, rh):
-    sub = ss.subsurface((rx, ry, rw, rh))
+    global new_image
+    new_image = ss.subsurface((rx, ry, rw, rh))
     fn = "saved_%s.png" % int(time.time())
-    pygame.image.save(sub, fn)
+    pygame.image.save(new_image, fn)
+
 
 
 running = True
@@ -45,8 +49,10 @@ while running:
     screen.blit(ss, (0,0))
     pygame.draw.rect(screen, rcolor, (rx, ry, rw, rh), rthickness)
     rc = pygame.Rect(rx, ry, rw, rh)
-    rect_fonted = font.render(str(rc), True, FONT_GREEN)
-    screen.blit(rect_fonted, (5,5))
+
+    if show_rect_dimensions:
+        rect_fonted = font.render(str(rc), True, FONT_GREEN)
+        screen.blit(rect_fonted, (5,5))
 
     for e in pygame.event.get():
         if e.type == pygame.QUIT:
@@ -55,10 +61,20 @@ while running:
             kname = pygame.key.name(e.key)
             if kname == 'q':
                 running = False
+            elif kname == 'r':
+                show_rect_dimensions = not show_rect_dimensions
             elif kname == 'p':
                 print "current rect: " + str(rc)
             elif kname == 'k':
                 store_subsurface_image(rx, ry, rw, rh)
+            elif kname == 'n':
+                nw, nh = new_image.get_width(), new_image.get_height()
+                print "new image: %i %i" % (new_image.get_width(), new_image.get_height())
+                if new_image:
+                    print 'switching to new image'
+                    ss = new_image
+                    screen = pygame.display.set_mode((nw, nh))
+                    rx, ry, rw, rh = 0, 0, 16, 16
             elif kname in ('right','down','left','up'):
                 expanding = True
                 kex = kname
