@@ -1,17 +1,24 @@
 import pygame
+import time
 #from pygame import set_trace
 
 pygame.init()
+clock = pygame.time.Clock()
 
 FONT_SIZE = 16
 FONT_GREEN = (0,255,0)
 font = pygame.font.SysFont(None, FONT_SIZE)
 
-SF2 = '60224.png'
+#SF2 = '60224.png'
+SF2 = 'saved_1528035307.png'
+#full = pygame.image.load(SF2)
+#fullw, fullh = full.get_width(), full.get_height()
+#ss = full.subsurface((fullw/4 -75,100,fullw/3 + 100,fullh/5))
 ss = pygame.image.load(SF2)
+sw, sh = ss.get_width(), ss.get_height()
 
 
-screen = pygame.display.set_mode((800,600))
+screen = pygame.display.set_mode((sw,sh))
 
 rx, ry = 0,0
 rw = 16
@@ -25,8 +32,15 @@ expanding = False
 translating = False
 kex = None
 
+def store_subsurface_image(rx, ry, rw, rh):
+    sub = ss.subsurface((rx, ry, rw, rh))
+    fn = "saved_%s.png" % int(time.time())
+    pygame.image.save(sub, fn)
+
+
 running = True
 while running:
+    clock.tick(20)
     pygame.display.update()
     screen.blit(ss, (0,0))
     pygame.draw.rect(screen, rcolor, (rx, ry, rw, rh), rthickness)
@@ -41,6 +55,10 @@ while running:
             kname = pygame.key.name(e.key)
             if kname == 'q':
                 running = False
+            elif kname == 'p':
+                print "current rect: " + str(rc)
+            elif kname == 'k':
+                store_subsurface_image(rx, ry, rw, rh)
             elif kname in ('right','down','left','up'):
                 expanding = True
                 kex = kname
@@ -50,7 +68,7 @@ while running:
         elif e.type == pygame.KEYUP:
             kname = pygame.key.name(e.key)
             if kname in ('right','down','left','up'):
-                expanding = False
+                expanding = False;
                 kex = None
             elif kname in ('w','a','s','d'):
                 translating = False
