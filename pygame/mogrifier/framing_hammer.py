@@ -4,6 +4,11 @@ import os
 import fnmatch
 from pdb import set_trace
 
+# change this to match your prefix from mogrifier
+ANIM_SERIES_NAME = 'flip'
+
+
+
 pygame.init()
 clock = pygame.time.Clock()
 
@@ -11,13 +16,11 @@ FONT_SIZE = 16
 FONT_GREEN = (0,255,0)
 font = pygame.font.SysFont(None, FONT_SIZE)
 
-anim_series_name = 'flip'
-
 anim_surfs = []
 widest, tallest = 0,0
 
 for fn in os.listdir('.'):
-    if fnmatch.fnmatch(fn, "%s*" % anim_series_name):
+    if fnmatch.fnmatch(fn, "%s*" % ANIM_SERIES_NAME):
         sub = pygame.image.load(fn)
         sw, sh = sub.get_width(), sub.get_height()
         print 'loaded image w dimensions: ', sw, sh
