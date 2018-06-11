@@ -17,16 +17,18 @@ SF2 = 'saved_1528035307.png'
 ss = pygame.image.load(SF2)
 sw, sh = ss.get_width(), ss.get_height()
 
+working_anim_name = 'crouch'
+
 
 screen = pygame.display.set_mode((sw,sh))
 new_image = None
+
 
 rx, ry = 0,0
 rw = 16
 rh = 16
 rthickness = 2
 INC = 2
-
 rcolor = (175,175,175)
 
 expanding = False
@@ -36,8 +38,9 @@ kex = None
 
 def store_subsurface_image(rx, ry, rw, rh):
     global new_image
+    global working_anim_name
     new_image = ss.subsurface((rx, ry, rw, rh))
-    fn = "saved_%s.png" % int(time.time())
+    fn = "%s_%i.png" % (working_anim_name, int(time.time()))
     pygame.image.save(new_image, fn)
 
 
