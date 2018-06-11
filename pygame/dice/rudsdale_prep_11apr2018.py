@@ -70,6 +70,9 @@ def all_dots(x, y):
     draw_circles([1,2,3,4,5,6,7], xymap)
 
 
+side1(50,50)
+
+'''
 #side2(175,50)
 side1(50,50)
 #side1(175,50)
@@ -83,6 +86,14 @@ side4(50,175)
 side5(175,175)
 side6(300,175)
 #all_dots(250, 150)
+'''
+
+#base(50,50)
+#base(175,50)
+#base(300,50)
+#base(50,175)
+#base(175,175)
+#base(300,175)
 
 pygame.display.update()
 

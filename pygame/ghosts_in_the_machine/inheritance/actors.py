@@ -1,3 +1,5 @@
+import pygame
+
 class Actor:
 
     spritesheet = pygame.image.load('spritesheet.png')
@@ -50,8 +52,8 @@ class Actor:
 
 
 class Pacman(Actor):
-    def __init__(self, name, startx, starty):
-        super(name, startx, starty)
+    def __init__(self, startx, starty):
+        super('pacman', startx, starty)
         self.first_chomp = True
     def chomp(self):
         pacman.first_chomp = not pacman.first_chomp
@@ -65,6 +67,7 @@ class Ghost:
         super(name, startx, starty)
 
     def set_direction(self, direction):
+        return
         # need custom Ghost direction code
         #self.direction = direction
 
