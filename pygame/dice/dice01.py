@@ -1,4 +1,5 @@
 import pygame
+pygame.init()
 
 screen_dimensions = (640, 480)
 BLUE = (0,0,255)
@@ -10,7 +11,7 @@ x = 50
 y = 50
 w = 100
 h = w
-CIRCLE_RADIUS = w / 10
+CIRCLE_RADIUS = int(w / 10)
 
 square_rect = pygame.Rect(x, y, w, h)
 

@@ -11,45 +11,23 @@ pacman_down = scale2x(spritesheet.subsurface(455, 48, 16, 16))
 pacmanx = 50
 pacmany = 145
 
-pellet = scale2x(scale2x(spritesheet.subsurface(10, 10, 5, 5)))
-pelletx = 150
-pellety = 150
+pellet_image = scale2x(scale2x(spritesheet.subsurface(10, 10, 5, 5)))
+
+class Pellet:
+    def __init__(self, xpos, ypos):
+        self.x = xpos
+        self.y = ypos
+        self.image = pellet_image
 
 
 def draw_screen():
-    global show_pellet
     screen.fill((0,0,0))
     screen.blit(pacman, (pacmanx, pacmany))
-    if show_pellet:
-        screen.blit(pellet, (pelletx, pellety))
+    screen.blit(pellet.image, (pellet.x, pellet.y))
     pygame.display.update()
 
 
-def check_for_collision():
-    global show_pellet
-    rpac = rect_pacman()
-    rpel = rect_pellet()
-    if rpac.colliderect(rpel):
-        print("collision")
-        show_pellet = False
-
-
-def update_positions():
-    MOVE_INCREMENT = 5
-
-    global pacmanx, pacmany, moving
-    if moving:
-        check_for_collision()
-        if direction == 'right':
-            pacmanx += MOVE_INCREMENT
-        if direction == 'left':
-            pacmanx -= MOVE_INCREMENT
-        if direction == 'up':
-            pacmany -= MOVE_INCREMENT
-        if direction == 'down':
-            pacmany += MOVE_INCREMENT
-
-
+# update_positions() has stepped out for just a moment
 
 def handle_events():
     global running, moving, pacman, direction
@@ -81,12 +59,13 @@ def handle_events():
 def rect_pacman():
     return pygame.Rect(pacmanx, pacmany, 32, 32)
 
-def rect_pellet():
-    return pygame.Rect(pelletx, pellety, 20, 20)
+# rect_pellet() is moving into the Pellet class
 
+
+# instantiate one pellet
+pellet = Pellet(150, 150)
 
 # global state
-show_pellet = True
 pacman = pacman_right
 direction = 'right'
 moving = False
@@ -95,5 +74,4 @@ running = True
 # GAME LOOP
 while running:
     handle_events()
-    update_positions()
     draw_screen()

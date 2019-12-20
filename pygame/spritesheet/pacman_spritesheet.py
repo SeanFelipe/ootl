@@ -21,7 +21,7 @@ while running:
         if e.type == pygame.MOUSEMOTION:
             pass
         else:
-            print e
+            print(e)
             if e.type == pygame.QUIT:
                 running = False
                 pygame.quit()

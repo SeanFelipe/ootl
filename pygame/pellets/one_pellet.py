@@ -1,7 +1,9 @@
 import pygame
 from pygame.transform import scale2x
 
+print("before init")
 pygame.init()
+print("after init")
 pygame.display.set_caption('Pacman MPA')
 
 class ThinSprite:
@@ -13,6 +15,7 @@ class ThinSprite:
         self.direction = 'right'
 
 
+print("before screen")
 screen = pygame.display.set_mode((640,300))
 spritesheet = pygame.image.load('../spritesheet.png').convert()
 spritesheet.set_colorkey((0,0,0))
@@ -45,12 +48,15 @@ INCREMENT = 2
 
 moving = False
 
+print("before font")
 # font for printing score
-font = pygame.font.SysFont(None, 24)
+#font = pygame.font.SysFont(None, 24)
+print("after font")
 
 # GAME LOOP
 running = True
 while running:
+    print("update")
     pygame.display.update()
 
     # process movement
@@ -70,7 +76,7 @@ while running:
     #screen.fill((255,255,255))
     for pellet in pellets:
         if pellet.rect.colliderect(pacman.rect):
-            print 'collided with pellet: ', pellet
+            print('collided with pellet: ', pellet)
             pellets.remove(pellet)
         screen.blit(pellet.image, (pellet.rect.x, pellet.rect.y))
 

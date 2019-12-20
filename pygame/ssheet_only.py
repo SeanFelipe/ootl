@@ -18,7 +18,7 @@ screen.blit(blank, (0,0))
 u = pygame.display.update
 u()
 
-print spritesheet
+print(spritesheet)
 
 pygame.image.save(screen, 'maze_blank.png')
 

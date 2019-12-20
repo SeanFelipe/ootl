@@ -11,9 +11,14 @@ pacman_down = scale2x(spritesheet.subsurface(455, 48, 16, 16))
 pacmanx = 50
 pacmany = 145
 
-pellet = scale2x(scale2x(spritesheet.subsurface(10, 10, 5, 5)))
-pelletx = 150
-pellety = 150
+pellet_image = scale2x(scale2x(spritesheet.subsurface(10, 10, 5, 5)))
+
+class Pellet:
+    def __init__(self, xpos, ypos):
+        self.x = xpos
+        self.y = ypos
+        self.image = pellet_image
+        self.displayed = True
 
 
 def draw_screen():
@@ -84,6 +89,8 @@ def rect_pacman():
 def rect_pellet():
     return pygame.Rect(pelletx, pellety, 20, 20)
 
+
+pellet = Pellet(150, 150)
 
 # global state
 show_pellet = True
